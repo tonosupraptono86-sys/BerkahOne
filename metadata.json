@@ -1,0 +1,6 @@
+{
+  "name": "BerkahOne",
+  "description": "Sistem Informasi Kependudukan, Kas Besar (Kas Kecil & BOP), dan Pelaporan RT 02 RW 14 Tanjung Sari",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

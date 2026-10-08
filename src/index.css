@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-xs: 420px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+  --breakpoint-3xl: 1920px;
+  --breakpoint-4k: 2560px;
+}
+
+/* ==========================================================================
+   RESPONSIVE TYPOGRAPHY & VIEWPORT MEDIA QUERIES (Small Screens to 4K Displays)
+   ========================================================================== */
+
+/* 1. Mobile Small Screens (< 640px) */
+@media (max-width: 639px) {
+  html {
+    font-size: 15px;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* Optimize touch target sizes for mobile */
+  button, a, input, select {
+    min-height: 38px;
+  }
+
+  /* Compact table view on mobile */
+  .table-responsive-container {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+}
+
+/* 2. Tablet / iPad (640px - 1023px) */
+@media (min-width: 640px) and (max-width: 1023px) {
+  html {
+    font-size: 15.5px;
+  }
+}
+
+/* 3. Standard Desktop / Laptop (1024px - 1535px) */
+@media (min-width: 1024px) and (max-width: 1535px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* 4. Large Desktop / 2K WQHD (1536px - 2559px) */
+@media (min-width: 1536px) {
+  html {
+    font-size: 16.5px;
+  }
+
+  /* Wider sidebar and generous spacing */
+  .app-container-responsive {
+    max-width: 1840px !important;
+  }
+}
+
+/* 5. 4K Ultra HD & Ultra-wide Monitors (>= 2560px) */
+@media (min-width: 2560px) {
+  html {
+    font-size: 17.5px;
+  }
+
+  /* Expand layout to utilize 4K screen width naturally without microscopic text */
+  .app-container-responsive {
+    max-width: 3200px !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+
+  /* Expand sidebar comfortably on 4K */
+  #main-sidebar {
+    width: 20rem !important;
+  }
+
+  /* 4K Grid enhancements for KPI Cards */
+  .grid-responsive-kpi {
+    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+  }
+
+  .grid-responsive-kk {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  }
+
+  .grid-responsive-charts {
+    grid-template-columns: 3fr 2fr !important;
+  }
+}
+
+/* 6. Extreme Ultra-wide / Dual 4K (> 3400px) */
+@media (min-width: 3400px) {
+  html {
+    font-size: 19px;
+  }
+
+  .app-container-responsive {
+    max-width: 3800px !important;
+  }
+
+  #main-sidebar {
+    width: 22rem !important;
+  }
+}
+
+/* ==========================================================================
+   FLEXIBLE GRID UTILITY CLASSES
+   ========================================================================== */
+
+/* Auto-fit card grid: automatically wraps and expands smoothly based on screen width */
+.grid-autofit-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+@media (min-width: 1536px) {
+  .grid-autofit-cards {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+@media (min-width: 2560px) {
+  .grid-autofit-cards {
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+/* Smooth custom scrollbars for wide matrix tables on all monitor sizes */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ==========================================================================
+   PRINT SPECIFIC MEDIA QUERY
+   ========================================================================== */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide navigation, sidebars, headers, footers and anything marked with print:hidden */
+  header,
+  nav,
+  aside,
+  footer,
+  .print\:hidden,
+  #main-navbar,
+  #main-sidebar,
+  #mobile-bottom-bar {
+    display: none !important;
+  }
+
+  /* Optimize printable containers */
+  main {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 15mm 15mm 15mm 15mm;
+  }
+}
+

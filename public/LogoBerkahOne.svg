@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient: Deep Forest Green to Rich Vibrant Emerald -->
+    <radialGradient id="bgGlow" cx="45%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#237e38" />
+      <stop offset="35%" stop-color="#145d28" />
+      <stop offset="70%" stop-color="#0a3c17" />
+      <stop offset="100%" stop-color="#04200b" />
+    </radialGradient>
+
+    <!-- Orange Gradient for Stylized '1' -->
+    <linearGradient id="orangeOne" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#ffb020" />
+      <stop offset="35%" stop-color="#ff8f00" />
+      <stop offset="75%" stop-color="#f57c00" />
+      <stop offset="100%" stop-color="#e65100" />
+    </linearGradient>
+
+    <!-- Leaf Upper Gradient (Fresh Spring Lime) -->
+    <linearGradient id="leafTop" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#55b31f" />
+      <stop offset="50%" stop-color="#7bd52c" />
+      <stop offset="100%" stop-color="#99e843" />
+    </linearGradient>
+
+    <!-- Leaf Lower Gradient (Deep Emerald Green) -->
+    <linearGradient id="leafBottom" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0f4a1a" />
+      <stop offset="60%" stop-color="#1c752c" />
+      <stop offset="100%" stop-color="#2e943c" />
+    </linearGradient>
+
+    <!-- Soft Drop Shadow for Emblem -->
+    <filter id="emblemShadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- Squircle Base Icon Container -->
+  <rect width="500" height="500" rx="110" fill="url(#bgGlow)" />
+  
+  <!-- Subtle Inner Border Highlight -->
+  <rect width="494" height="494" x="3" y="3" rx="108" fill="none" stroke="#4ade80" stroke-width="2" stroke-opacity="0.25" />
+
+  <!-- Monogram Symbol Group (B + House + Leaf + 1) -->
+  <g id="berkahone-symbol" filter="url(#emblemShadow)">
+    
+    <!-- 1. White 'B' Shape (Smooth Thick Monogram) -->
+    <!-- Outer contour of B with internal counter for lower bowl -->
+    <path d="M 125,70 
+             L 280,70 
+             C 335,70 375,100 375,150 
+             C 375,178 358,202 328,214 
+             C 370,226 395,258 395,302 
+             C 395,360 345,395 270,395 
+             L 125,395 
+             Z 
+             M 245,260 
+             L 270,260 
+             C 305,260 325,278 325,310 
+             C 325,340 305,355 270,355 
+             L 245,355 
+             Z"
+          fill="#ffffff" 
+          fill-rule="evenodd" />
+
+    <!-- 2. House Cutout in Upper/Center part of B -->
+    <!-- Silhouette of the House (Dark green matching background tone) -->
+    <path d="M 155,195 
+             L 220,132 
+             L 285,195 
+             L 285,325 
+             C 285,335 278,342 268,342 
+             L 172,342 
+             C 162,342 155,335 155,325 
+             Z" 
+          fill="#0c421b" />
+
+    <!-- 3. Four Square Windows (2x2 Grid) in pure white -->
+    <g fill="#ffffff">
+      <rect x="201" y="192" width="16" height="16" rx="2.5" />
+      <rect x="223" y="192" width="16" height="16" rx="2.5" />
+      <rect x="201" y="214" width="16" height="16" rx="2.5" />
+      <rect x="223" y="214" width="16" height="16" rx="2.5" />
+    </g>
+
+    <!-- 4. Dynamic Orange Stylized '1' integrated into right side of B -->
+    <!-- Peak extends up-right, swooping down the right flank -->
+    <path d="M 324,182 
+             L 388,120 
+             L 388,285 
+             C 388,328 368,368 314,395 
+             C 352,365 365,330 365,285 
+             L 365,195 
+             L 345,212 
+             Z" 
+          fill="url(#orangeOne)" />
+
+    <!-- 5. Fresh Green Leaf overlapping lower-left house & B -->
+    <!-- Lower leaf curve -->
+    <path d="M 125,345 
+             C 130,290 175,255 235,248 
+             C 238,295 205,342 155,355 
+             C 138,358 128,353 125,345 Z" 
+          fill="url(#leafBottom)" />
+    <!-- Upper leaf curve & highlight -->
+    <path d="M 125,345 
+             C 140,285 185,250 240,248 
+             C 210,270 170,295 140,345 Z" 
+          fill="url(#leafTop)" />
+    <!-- Leaf central vein line -->
+    <path d="M 136,338 Q 185,288 238,249" 
+          stroke="#0e4a1a" 
+          stroke-width="2.5" 
+          fill="none" 
+          stroke-linecap="round" 
+          opacity="0.6" />
+  </g>
+
+  <!-- Typography: BERKAH & — One — -->
+  <!-- Centered Text Block -->
+  <g text-anchor="middle" font-family="'Plus Jakarta Sans', 'Inter', 'Montserrat', -apple-system, sans-serif">
+    <!-- Line 1: 'BERKAH' in Bold White All-Caps -->
+    <text x="250" y="408" 
+          fill="#ffffff" 
+          font-size="48" 
+          font-weight="900" 
+          letter-spacing="5"
+          style="text-transform: uppercase;">BERKAH</text>
+
+    <!-- Line 2: '— One —' in Vibrant Orange -->
+    <!-- Left Dash -->
+    <line x1="130" y1="441" x2="185" y2="441" 
+          stroke="#ff8f00" 
+          stroke-width="5" 
+          stroke-linecap="round" />
+    
+    <!-- 'One' Text -->
+    <text x="250" y="452" 
+          fill="#ff8f00" 
+          font-size="42" 
+          font-weight="800" 
+          letter-spacing="1">One</text>
+
+    <!-- Right Dash -->
+    <line x1="315" y1="441" x2="370" y2="441" 
+          stroke="#ff8f00" 
+          stroke-width="5" 
+          stroke-linecap="round" />
+  </g>
+</svg>
