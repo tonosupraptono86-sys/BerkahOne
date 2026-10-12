@@ -32,8 +32,6 @@ export const Navbar: React.FC<NavbarProps> = ({
   const { 
     currentUser, 
     logout, 
-    switchUser, 
-    users, 
     activeTab, 
     setActiveTab, 
     resetToDefaultData,
@@ -133,40 +131,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                       </span>
                     </div>
 
-                    <div className="px-3 py-2">
-                      <p className="text-[11px] font-semibold text-slate-400 px-2 mb-1.5 uppercase tracking-wider">
-                        Ganti Akun Demo Cepat:
-                      </p>
-                      <div className="space-y-1">
-                        {users.map((u) => (
-                          <button
-                            key={u.id}
-                            onClick={() => {
-                              switchUser(u.id);
-                              setUserDropdownOpen(false);
-                            }}
-                            className={`w-full text-left px-2.5 py-1.5 rounded-lg text-xs flex items-center justify-between transition-colors ${
-                              currentUser.id === u.id
-                                ? 'bg-emerald-50 text-emerald-900 font-semibold'
-                                : 'text-slate-600 hover:bg-slate-100'
-                            }`}
-                          >
-                            <div className="flex items-center gap-2">
-                              <span>{getRoleBadge(u.role).icon}</span>
-                              <div>
-                                <div>{u.nama}</div>
-                                <div className="text-[10px] text-slate-400 font-normal">{u.roleLabel}</div>
-                              </div>
-                            </div>
-                            {currentUser.id === u.id && (
-                              <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
-                            )}
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="border-t border-slate-100 pt-1 px-1">
+                    <div className="pt-2 px-1">
                       {currentUser?.role !== 'warga' && (
                         <button
                           onClick={() => {

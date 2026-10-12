@@ -88,16 +88,11 @@ export const BerkahOneIcon: React.FC<{ className?: string }> = ({ className = 'w
       />
     </g>
 
-    {/* Integrated Text Inside Squircle: BERKAH — One — */}
+    {/* Integrated Text Inside Squircle: BerkahOne */}
     <g textAnchor="middle" fontFamily="'Plus Jakarta Sans', system-ui, sans-serif">
-      <text x="250" y="408" fill="#ffffff" fontSize="48" fontWeight="900" letterSpacing="5">
-        BERKAH
+      <text x="250" y="440" fill="#ffffff" fontSize="48" fontWeight="900" letterSpacing="1">
+        Berkah<tspan fill="#ff8f00">One</tspan>
       </text>
-      <line x1="130" y1="441" x2="185" y2="441" stroke="#ff8f00" strokeWidth="5" strokeLinecap="round" />
-      <text x="250" y="452" fill="#ff8f00" fontSize="42" fontWeight="800">
-        One
-      </text>
-      <line x1="315" y1="441" x2="370" y2="441" stroke="#ff8f00" strokeWidth="5" strokeLinecap="round" />
     </g>
   </svg>
 );
@@ -155,12 +150,9 @@ export const Logo: React.FC<LogoProps> = ({
     <div className={`flex items-center gap-3 ${className}`}>
       {IconGraphic}
       <div className="flex flex-col leading-none">
-        <div className="flex items-baseline gap-1">
-          <span className={`font-black tracking-wider uppercase ${theme === 'dark' ? 'text-white' : 'text-emerald-950'} ${textSizes[size].title}`}>
-            BERKAH
-          </span>
-          <span className={`font-black tracking-tight text-orange-500 ${textSizes[size].title}`}>
-            One
+        <div className="flex items-baseline">
+          <span className={`font-black tracking-tight ${theme === 'dark' ? 'text-white' : 'text-emerald-950'} ${textSizes[size].title}`}>
+            Berkah<span className="text-orange-500">One</span>
           </span>
         </div>
         {showSubtitle && (

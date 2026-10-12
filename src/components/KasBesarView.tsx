@@ -119,13 +119,11 @@ export const KasBesarView: React.FC = () => {
 
   const kategoriKasBOP = [
     'Pencairan BOP Kelurahan',
-    'BOP Alokasi Kebersihan & Sanitasi',
-    'BOP Pemberdayaan Masyarakat',
-    'Honor & Dukungan Kader',
-    'Sarana Pelayanan Masyarakat',
-    'Konsumsi Koordinasi Kelembagaan',
+    'Administrasi Pelaksanaan Tugas RT',
+    'Kegiatan Penataan, Pemeliharaan dan Kebersihan Lingkungan RT',
+    'Kegiatan Sosial Budaya Pengembangan Pariwisata dan Pemberdayaan Masyarakat',
+    'Kegiatan Mendukung Program Prioritas Tahun 2026 Terkait Lingkungan dan Ketahanan Pangan',
     'Publikasi & Papan Informasi',
-    'Administrasi & SPJ BOP',
     'Kesehatan & Pengendalian DBD',
     'Lain-lain (Kas BOP)'
   ];
@@ -137,7 +135,7 @@ export const KasBesarView: React.FC = () => {
       setFormKategori(formTipe === 'masuk' ? 'Iuran Warga Bulanan' : 'Kebersihan & Sampah');
       setFormLpj(formTipe === 'masuk' ? 'Tidak Perlu' : 'Kwitansi Terlampir');
     } else {
-      setFormKategori(formTipe === 'masuk' ? 'Pencairan BOP Kelurahan' : 'Honor & Dukungan Kader');
+      setFormKategori(formTipe === 'masuk' ? 'Pencairan BOP Kelurahan' : 'Administrasi Pelaksanaan Tugas RT');
       setFormLpj(formTipe === 'masuk' ? 'SP2D Kelurahan' : 'LPJ BOP');
     }
   };
@@ -148,7 +146,7 @@ export const KasBesarView: React.FC = () => {
       setFormKategori(tipe === 'masuk' ? 'Iuran Warga Bulanan' : 'Kebersihan & Sampah');
       setFormLpj(tipe === 'masuk' ? 'Tidak Perlu' : 'Kwitansi Terlampir');
     } else {
-      setFormKategori(tipe === 'masuk' ? 'Pencairan BOP Kelurahan' : 'Honor & Dukungan Kader');
+      setFormKategori(tipe === 'masuk' ? 'Pencairan BOP Kelurahan' : 'Administrasi Pelaksanaan Tugas RT');
       setFormLpj(tipe === 'masuk' ? 'SP2D Kelurahan' : 'LPJ BOP');
     }
   };
@@ -388,7 +386,7 @@ export const KasBesarView: React.FC = () => {
     if (pos === 'kas_kecil' && !kategoriKasKecil.includes(koreksiKategori)) {
       setKoreksiKategori(koreksiTipe === 'masuk' ? 'Iuran Warga Bulanan' : 'Kebersihan & Sampah');
     } else if (pos === 'kas_bop' && !kategoriKasBOP.includes(koreksiKategori)) {
-      setKoreksiKategori(koreksiTipe === 'masuk' ? 'Pencairan BOP Kelurahan' : 'Konsumsi Koordinasi Kelembagaan');
+      setKoreksiKategori(koreksiTipe === 'masuk' ? 'Pencairan BOP Kelurahan' : 'Administrasi Pelaksanaan Tugas RT');
     }
   };
 

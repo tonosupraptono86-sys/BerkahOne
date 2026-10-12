@@ -42,10 +42,7 @@ export const BERKAHONE_ICON_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewB
     <path d="M 136,338 Q 185,288 238,249" stroke="#0e4a1a" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.6" />
   </g>
   <g text-anchor="middle" font-family="'Plus Jakarta Sans', system-ui, sans-serif">
-    <text x="250" y="408" fill="#ffffff" font-size="48" font-weight="900" letter-spacing="5">BERKAH</text>
-    <line x1="130" y1="441" x2="185" y2="441" stroke="#ff8f00" stroke-width="5" stroke-linecap="round" />
-    <text x="250" y="452" fill="#ff8f00" font-size="42" font-weight="800">One</text>
-    <line x1="315" y1="441" x2="370" y2="441" stroke="#ff8f00" stroke-width="5" stroke-linecap="round" />
+    <text x="250" y="440" fill="#ffffff" font-size="48" font-weight="900" letter-spacing="1">Berkah<tspan fill="#ff8f00">One</tspan></text>
   </g>
 </svg>`;
 

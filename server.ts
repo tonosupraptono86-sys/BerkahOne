@@ -145,18 +145,9 @@ Hasilkan JSON valid sesuai instruksi.`;
   });
 
   // Environment detection:
-  // - In development mode (AI Studio dev sandbox): tsx server.ts runs with port 3000
-  // - In Cloud Run production deployment: process.env.PORT or K_SERVICE is set, or NODE_ENV=production
-  const portArgIndex = process.argv.indexOf("--port");
-  const portFromArg = portArgIndex !== -1 ? process.argv[portArgIndex + 1] : undefined;
-  const portEnv = process.env.PORT || portFromArg;
-
-  const isCloudRun = Boolean(process.env.K_SERVICE);
-  const isProduction =
-    process.env.NODE_ENV === "production" ||
-    isCloudRun ||
-    (Boolean(process.env.PORT) && process.env.PORT !== "3000");
-
+  // - In development mode: dev server runs with Vite middleware on port 3000
+  // - In production deployment: serves static built assets from dist on process.env.PORT (or 8080)
+  const isProduction = process.env.NODE_ENV === "production" || process.env.npm_lifecycle_event === "start";
   const isDev = !isProduction;
 
   // Vite middleware for development vs static serve for production
@@ -175,15 +166,15 @@ Hasilkan JSON valid sesuai instruksi.`;
       if (fs.existsSync(indexPath)) {
         res.sendFile(indexPath);
       } else {
-        res.status(200).send("<!doctype html><html><head><title>BerkahOne</title></head><body><div id='root'></div></body></html>");
+        res.status(404).send("Application not built. Run npm run build first.");
       }
     });
   }
 
   // Network Port configuration:
   // - In development mode (AI Studio dev sandbox), the dev server must bind to port 3000.
-  // - In production / Cloud Run deployment, the container must bind to process.env.PORT (default 8080).
-  const PORT = portEnv ? parseInt(portEnv, 10) : (isDev ? 3000 : 8080);
+  // - In production / Cloud Run deployment, the container binds to process.env.PORT (default 8080).
+  const PORT = isDev ? 3000 : (process.env.PORT ? parseInt(process.env.PORT, 10) : 8080);
 
   const server = app.listen(PORT, "0.0.0.0", () => {
     console.log(`Server listening on http://0.0.0.0:${PORT} (${isDev ? "development" : "production"})`);

@@ -205,8 +205,24 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
                   lpj: 'Tidak Perlu'
                 };
               }
+              let kategori = item.kategori;
+              if (item.posKas === 'kas_bop') {
+                if (kategori === 'Administrasi & SPJ BOP') {
+                  kategori = 'Administrasi Pelaksanaan Tugas RT';
+                } else if (kategori === 'BOP Alokasi Kebersihan & Sanitasi' || kategori === 'BOP Alokasi kebersihan & Sanitasi') {
+                  kategori = 'Kegiatan Penataan, Pemeliharaan dan Kebersihan Lingkungan RT';
+                } else if (kategori === 'BOP Pemberdayaan Masyarakat') {
+                  kategori = 'Kegiatan Sosial Budaya Pengembangan Pariwisata dan Pemberdayaan Masyarakat';
+                } else if (kategori === 'Honor & Dukungan Kader') {
+                  kategori = 'Kegiatan Mendukung Program Prioritas Tahun 2026 Terkait Lingkungan dan Ketahanan Pangan';
+                } else if (kategori === 'Sarana Pelayanan Masyarakat' || kategori === 'Konsumsi Koordinasi Kelembagaan') {
+                  kategori = 'Administrasi Pelaksanaan Tugas RT';
+                }
+              }
+
               return {
                 ...item,
+                kategori,
                 lpj: item.lpj || matchInitial?.lpj || (item.posKas === 'kas_bop' ? 'Proses LPJ' : (item.tipe === 'masuk' ? 'Tidak Perlu' : 'Kwitansi Terlampir')),
                 keterangan: item.keterangan ? item.keterangan.replace(/Bantuan Operasional Pengurus/g, 'Bantuan Operasional Pemerintah') : item.keterangan
               };
